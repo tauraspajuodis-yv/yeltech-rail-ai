@@ -13,4 +13,6 @@ COPY back_end .
 
 COPY common /back_end/app/common
 
+EXPOSE 8296
+
 ENTRYPOINT ["gunicorn", "--log-level", "INFO", "-b", ":8296", "-t", "120", "run:APP"]
